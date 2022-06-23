@@ -63,21 +63,13 @@
             x-data="{}"
             x-tooltip.raw="{{ $tooltip }}"
         @endif
-
-        @if($href)
-            href="{{ $href }}"
-        @endif
-
-        @if($target)
-            target="{{ $target }}"
-        @endif
         {{ $attributes->class($buttonClasses) }}
     >
         @if ($icon && $iconPosition === 'before')
             <x-dynamic-component :component="$icon" :class="$iconClasses"/>
         @endif
 
-        {{ $getLabel() }}
+        {{ $slot }}
 
         @if ($icon && $iconPosition === 'after')
             <x-dynamic-component :component="$icon" :class="$iconClasses"/>
@@ -97,7 +89,7 @@
             <x-dynamic-component :component="$icon" :class="$iconClasses"/>
         @endif
 
-        {{ $getLabel() }}
+        {{ $slot }}
 
         @if ($icon && $iconPosition === 'after')
             <x-dynamic-component :component="$icon" :class="$iconClasses"/>

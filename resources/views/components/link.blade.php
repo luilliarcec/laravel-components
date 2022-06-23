@@ -43,7 +43,6 @@
             x-data="{}"
             x-tooltip.raw="{{ $tooltip }}"
         @endif
-
         {{ $attributes->class($linkClasses) }}
     >
         @if ($icon && $iconPosition === 'before')
