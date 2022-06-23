@@ -12,7 +12,6 @@ class ComponentsServiceProvider extends PackageServiceProvider
         $package
             ->name('components')
             ->hasConfigFile('components')
-            ->hasTranslations()
             ->hasViews('components');
     }
 }

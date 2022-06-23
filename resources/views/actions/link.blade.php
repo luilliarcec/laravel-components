@@ -8,7 +8,7 @@
     :icon-position="$getIconPosition()"
     :tooltip="$getTooltip()"
     :disabled="$isDisabled()"
-    :dark-mode="config('tables.dark_mode')"
+    :dark-mode="config('components.dark_mode')"
 >
     {{ $getLabel() }}
 </x-components::link>
