@@ -12,19 +12,6 @@
 ])
 
 @php
-    $tag = $getUrl() ? 'a' : 'button';
-    $type = 'button';
-    $href = $isEnabled() ? $getUrl() : null;
-    $target = $shouldOpenUrlInNewTab() ? '_blank' : null;
-    $color = $getColor() ?: 'primary';
-    $size = $getSize() ?: 'sm';
-    $icon = $getIcon();
-    $iconPosition = $getIconPosition() ?: 'before';
-    $tooltip = $getTooltip();
-    $disabled = $isDisabled();
-    $outlined = $isOutlined();
-    $darkMode = config('tables.dark_mode');
-
     $buttonClasses = array_merge([
         'inline-flex items-center justify-center gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset filament-button',
         'dark:focus:ring-offset-0' => $darkMode,
