@@ -40,6 +40,13 @@ class Action extends Component implements Htmlable
         return $this;
     }
 
+    public function iconButton(): static
+    {
+        $this->view('components::actions.icon-button');
+
+        return $this;
+    }
+
     final public function __construct(string $name)
     {
         $this->name($name);
