@@ -28,8 +28,6 @@ class IconButton extends Link
             disabled: $disabled,
             darkMode: $darkMode
         );
-
-        $this->label = 'Prueba de clase';
     }
 
     public function render(): View
