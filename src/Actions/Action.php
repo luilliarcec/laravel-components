@@ -14,6 +14,7 @@ class Action extends Component implements Htmlable
     use Traits\Tappable;
     use Concerns\InteractsWithRecords;
     use Concerns\EvaluatesClosures;
+    use Concerns\CanRequireConfirmation;
     use Concerns\CanOpenUrl;
     use Concerns\CanBeHidden;
     use Concerns\CanBeDisabled;
