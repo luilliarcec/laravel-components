@@ -2,6 +2,7 @@
 
 namespace Luilliarcec\Components;
 
+use Illuminate\Support\Facades\Blade;
 use Luilliarcec\Components\Components\Button;
 use Luilliarcec\Components\Components\IconButton;
 use Luilliarcec\Components\Components\Link;
@@ -17,5 +18,10 @@ class ComponentsServiceProvider extends PackageServiceProvider
             ->hasConfigFile('components')
             ->hasViewComponents('components', Link::class, Button::class, IconButton::class)
             ->hasViews('components');
+    }
+
+    public function packageBooted()
+    {
+        Blade::componentNamespace('Luilliarcec\\Components\\Components', 'components');
     }
 }
