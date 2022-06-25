@@ -20,7 +20,7 @@
         'dark:hover:bg-gray-300/5' => $darkMode,
         'opacity-70 cursor-not-allowed pointer-events-none' => $disabled,
     ];
-    $iconClasses = 'w-5 h-5 filament-icon-button-icon';
+    $iconClasses = 'w-5 h-5';
 @endphp
 
 @if ($tag === 'button')
