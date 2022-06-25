@@ -22,6 +22,8 @@ trait EvaluatesClosures
     {
         return array_merge([
             'action' => $this,
+            'record' => $this->getRecord(),
+            'records' => $this->getRecords(),
         ]);
     }
 }
