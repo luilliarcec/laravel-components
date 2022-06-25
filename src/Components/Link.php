@@ -1,6 +1,6 @@
 <?php
 
-namespace Luilliarcec\Components\View\Components;
+namespace Luilliarcec\Components\Components;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
