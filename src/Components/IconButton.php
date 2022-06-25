@@ -9,8 +9,8 @@ class IconButton extends Link
     public function __construct(
         string $tag = 'button',
         string $type = 'button',
-        string $color = 'primary',
-        string $size = 'md',
+        ?string $color = 'primary',
+        ?string $size = 'md',
         ?string $icon = null,
         ?string $tooltip = null,
         bool $disabled = false,
