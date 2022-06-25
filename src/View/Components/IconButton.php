@@ -4,7 +4,7 @@ namespace Luilliarcec\Components\View\Components;
 
 use Illuminate\Contracts\View\View;
 
-class Button extends Link
+class IconButton extends Link
 {
     public function __construct(
         string $tag = 'button',
@@ -12,11 +12,10 @@ class Button extends Link
         string $color = 'primary',
         string $size = 'md',
         ?string $icon = null,
-        string $iconPosition = 'before',
         ?string $tooltip = null,
         bool $disabled = false,
         bool $darkMode = false,
-        public bool $outlined = false,
+        public ?string $label = null,
     ) {
         parent::__construct(
             tag: $tag,
@@ -24,7 +23,7 @@ class Button extends Link
             color: $color,
             size: $size,
             icon: $icon,
-            iconPosition: $iconPosition,
+            iconPosition: null,
             tooltip: $tooltip,
             disabled: $disabled,
             darkMode: $darkMode
@@ -33,6 +32,6 @@ class Button extends Link
 
     public function render(): View
     {
-        return view('components::components.button');
+        return view('components::components.icon-button');
     }
 }

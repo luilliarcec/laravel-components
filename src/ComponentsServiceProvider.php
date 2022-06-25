@@ -13,9 +13,6 @@ class ComponentsServiceProvider extends PackageServiceProvider
         $package
             ->name('components')
             ->hasConfigFile('components')
-            ->hasViewComponents('components', [
-                Button::class,
-            ])
             ->hasViews('components');
     }
 }
