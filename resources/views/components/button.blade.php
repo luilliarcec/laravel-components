@@ -1,16 +1,3 @@
-@props([
-    'tag' => 'button',
-    'type' => 'button',
-    'color' => 'primary',
-    'size' => 'md',
-    'icon' => null,
-    'iconPosition' => 'before',
-    'tooltip' => null,
-    'disabled' => false,
-    'outlined' => false,
-    'darkMode' => false,
-])
-
 @php
     $buttonClasses = array_merge([
         'inline-flex items-center justify-center gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset',

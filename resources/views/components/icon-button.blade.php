@@ -1,14 +1,3 @@
-@props([
-    'tag' => 'button',
-    'type' => 'button',
-    'label' => null,
-    'color' => 'primary',
-    'icon' => null,
-    'tooltip' => null,
-    'disabled' => false,
-    'darkMode' => false,
-])
-
 @php
     $buttonClasses = [
         'flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-500/5 focus:outline-none filament-icon-button',
@@ -20,7 +9,12 @@
         'dark:hover:bg-gray-300/5' => $darkMode,
         'opacity-70 cursor-not-allowed pointer-events-none' => $disabled,
     ];
-    $iconClasses = 'w-5 h-5';
+
+    $iconClasses = \Illuminate\Support\Arr::toCssClasses([
+        'w-3 h-3' => $size === 'sm',
+        'w-4 h-4' => $size === 'md',
+        'w-5 h-5' => $size === 'lg',
+    ]);
 @endphp
 
 @if ($tag === 'button')

@@ -1,15 +1,3 @@
-@props([
-    'tag' => 'a',
-    'type' => 'button',
-    'color' => 'primary',
-    'size' => 'md',
-    'icon' => null,
-    'iconPosition' => 'before',
-    'tooltip' => null,
-    'disabled' => false,
-    'darkMode' => false,
-])
-
 @php
     $linkClasses = [
         'inline-flex items-center justify-center hover:underline focus:outline-none focus:underline',
