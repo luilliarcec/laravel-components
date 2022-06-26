@@ -37,12 +37,12 @@
         </div>
 
         <x-slot:actions>
-            <x-components::button type="submit" :dark-mode="$darkMode">
-                {{ __('Yes, continue') }}
-            </x-components::button>
-
             <x-components::button @click="open = false" color="gray" :dark-mode="$darkMode">
                 {{ __('No, cancel') }}
+            </x-components::button>
+
+            <x-components::button type="submit" :dark-mode="$darkMode">
+                {{ __('Yes, continue') }}
             </x-components::button>
         </x-slot:actions>
     </form>
