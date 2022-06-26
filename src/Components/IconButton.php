@@ -3,6 +3,7 @@
 namespace Luilliarcec\Components\Components;
 
 use Illuminate\Contracts\View\View;
+use Luilliarcec\Components\Actions\Confirmation;
 
 class IconButton extends Link
 {
@@ -16,6 +17,7 @@ class IconButton extends Link
         bool $disabled = false,
         bool $darkMode = false,
         public ?string $label = null,
+        string|array|Confirmation|null $confirmation = null
     ) {
         parent::__construct(
             tag: $tag,
@@ -26,7 +28,8 @@ class IconButton extends Link
             iconPosition: null,
             tooltip: $tooltip,
             disabled: $disabled,
-            darkMode: $darkMode
+            darkMode: $darkMode,
+            confirmation: $confirmation
         );
     }
 

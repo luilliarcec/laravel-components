@@ -8,4 +8,5 @@
     :tooltip="$getTooltip()"
     :disabled="$isDisabled()"
     :dark-mode="config('components.dark_mode')"
+    :confirmation="$getJsonConfirmConfiguration()"
 />

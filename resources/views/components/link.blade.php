@@ -1,4 +1,6 @@
 @php
+    $hasConfirmation = $hasConfirmConfiguration();
+
     $linkClasses = [
         'inline-flex items-center justify-center hover:underline focus:outline-none focus:underline',
         'opacity-70 cursor-not-allowed' => $disabled,
@@ -25,7 +27,7 @@
     ]);
 @endphp
 
-@if ($tag === 'a')
+@if ($tag === 'a' && !$hasConfirmation)
     <a
         @if ($tooltip)
             x-data="{}"
@@ -43,13 +45,20 @@
             <x-dynamic-component :component="$icon" :class="$iconClasses"/>
         @endif
     </a>
-@elseif ($tag === 'button')
+@elseif ($tag === 'button' || $hasConfirmation)
     <button
         @if ($tooltip)
             x-data="{}"
             x-tooltip.raw="{{ $tooltip }}"
         @endif
-        type="{{ $type }}"
+
+        @if($hasConfirmation)
+            @click="$dispatch('open-confirm-modal', {confirmation: {{ $getJsonConfirmConfiguration() }} })"
+            type="button"
+        @else
+            type="{{ $type }}"
+        @endif
+
         {!! $disabled ? 'disabled' : '' !!}
         {{ $attributes->class($linkClasses) }}
     >

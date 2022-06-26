@@ -1,4 +1,6 @@
 @php
+    $hasConfirmation = $hasConfirmConfiguration();
+
     $buttonClasses = [
         'flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-500/5 focus:outline-none',
         'text-primary-500 focus:bg-primary-500/10' => $color === 'primary',
@@ -17,13 +19,18 @@
     ]);
 @endphp
 
-@if ($tag === 'button')
+@if ($tag === 'button' || $hasConfirmation)
     <button
         @if ($tooltip)
             x-data="{}"
             x-tooltip.raw="{{ $tooltip }}"
         @endif
-        type="{{ $type }}"
+        @if($hasConfirmation)
+            @click="$dispatch('open-confirm-modal', {confirmation: {{ $getJsonConfirmConfiguration() }} })"
+            type="button"
+        @else
+            type="{{ $type }}"
+        @endif
         {!! $disabled ? 'disabled' : '' !!}
         {{ $attributes->class($buttonClasses) }}
     >
