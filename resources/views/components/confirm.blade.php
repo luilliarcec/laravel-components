@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <x-slot:actions>
+        <div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
             <x-components::button @click="open = false" color="gray" :dark-mode="$darkMode">
                 {{ __('No, cancel') }}
             </x-components::button>
@@ -44,6 +44,6 @@
             <x-components::button type="submit" :dark-mode="$darkMode">
                 {{ __('Yes, continue') }}
             </x-components::button>
-        </x-slot:actions>
+        </div>
     </form>
 </x-components::modal>

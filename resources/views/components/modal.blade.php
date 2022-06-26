@@ -33,10 +33,6 @@
                 ])
             >
                 {{ $slot }}
-
-                <div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
-                    {{ $actions }}
-                </div>
             </div>
         </div>
     </div>
