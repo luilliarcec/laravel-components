@@ -11,15 +11,27 @@
         <input type="hidden" name="_method" :value="data.method">
 
         <div>
-            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-gray-600">
                 <x-heroicon-s-question-mark-circle class="h-6 w-6 text-primary-600"/>
             </div>
 
             <div class="mt-3 text-center sm:mt-5">
-                <h3 x-text="data.title" class="text-lg leading-6 font-medium text-gray-900"></h3>
+                <h3
+                    x-text="data.title"
+                    @class([
+                        'text-lg leading-6 font-medium text-gray-900',
+                        'dark:text-white' => $darkMode
+                    ])>
+                </h3>
 
                 <div class="mt-2">
-                    <p x-text="data.description" class="text-sm text-gray-500"></p>
+                    <p
+                        x-text="data.description"
+                        @class([
+                            'text-sm text-gray-500',
+                            'dark:text-gray-400' => $darkMode
+                        ])>
+                    </p>
                 </div>
             </div>
         </div>
