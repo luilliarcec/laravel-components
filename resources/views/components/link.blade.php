@@ -32,14 +32,12 @@
             x-data="{}"
             x-tooltip.raw="{{ $tooltip }}"
         @endif
-
         @if($hasConfirmation)
             @click="$dispatch('open-confirm-modal', {confirmation: {{ $getJsonConfirmConfiguration() }} })"
             type="button"
         @else
             type="{{ $type }}"
         @endif
-
         {!! $disabled ? 'disabled' : '' !!}
         {{ $attributes->class($linkClasses) }}
     >

@@ -1,4 +1,6 @@
 @php
+    $hasConfirmation = $hasConfirmConfiguration();
+
     $buttonClasses = array_merge([
         'inline-flex items-center justify-center gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset',
         'dark:focus:ring-offset-0' => $darkMode,
@@ -44,13 +46,18 @@
     ]);
 @endphp
 
-@if ($tag === 'button')
+@if ($tag === 'button' || $hasConfirmation)
     <button
         @if ($tooltip)
             x-data="{}"
             x-tooltip.raw="{{ $tooltip }}"
         @endif
-        type="{{ $type }}"
+        @if($hasConfirmation)
+            @click="$dispatch('open-confirm-modal', {confirmation: {{ $getJsonConfirmConfiguration() }} })"
+            type="button"
+        @else
+            type="{{ $type }}"
+        @endif
         {!! $disabled ? 'disabled' : '' !!}
         {{ $attributes->class($buttonClasses) }}
     >
