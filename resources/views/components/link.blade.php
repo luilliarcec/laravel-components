@@ -26,26 +26,7 @@
         'ml-1 -mr-2 rtl:mr-1 rtl:-ml-2' => $iconPosition === 'after',
     ]);
 @endphp
-
-@if ($tag === 'a' && !$hasConfirmation)
-    <a
-        @if ($tooltip)
-            x-data="{}"
-            x-tooltip.raw="{{ $tooltip }}"
-        @endif
-        {{ $attributes->class($linkClasses) }}
-    >
-        @if ($icon && $iconPosition === 'before')
-            <x-dynamic-component :component="$icon" :class="$iconClasses"/>
-        @endif
-
-        {{ $slot }}
-
-        @if ($icon && $iconPosition === 'after')
-            <x-dynamic-component :component="$icon" :class="$iconClasses"/>
-        @endif
-    </a>
-@elseif ($tag === 'button' || $hasConfirmation)
+@if ($tag === 'button' || $hasConfirmation)
     <button
         @if ($tooltip)
             x-data="{}"
@@ -72,4 +53,22 @@
             <x-dynamic-component :component="$icon" :class="$iconClasses"/>
         @endif
     </button>
+@elseif ($tag === 'a')
+    <a
+        @if ($tooltip)
+            x-data="{}"
+            x-tooltip.raw="{{ $tooltip }}"
+        @endif
+        {{ $attributes->class($linkClasses) }}
+    >
+        @if ($icon && $iconPosition === 'before')
+            <x-dynamic-component :component="$icon" :class="$iconClasses"/>
+        @endif
+
+        {{ $slot }}
+
+        @if ($icon && $iconPosition === 'after')
+            <x-dynamic-component :component="$icon" :class="$iconClasses"/>
+        @endif
+    </a>
 @endif

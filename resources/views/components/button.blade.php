@@ -44,25 +44,7 @@
     ]);
 @endphp
 
-@if ($tag === 'a')
-    <a
-        @if ($tooltip)
-            x-data="{}"
-            x-tooltip.raw="{{ $tooltip }}"
-        @endif
-        {{ $attributes->class($buttonClasses) }}
-    >
-        @if ($icon && $iconPosition === 'before')
-            <x-dynamic-component :component="$icon" :class="$iconClasses"/>
-        @endif
-
-        {{ $slot }}
-
-        @if ($icon && $iconPosition === 'after')
-            <x-dynamic-component :component="$icon" :class="$iconClasses"/>
-        @endif
-    </a>
-@elseif ($tag === 'button')
+@if ($tag === 'button')
     <button
         @if ($tooltip)
             x-data="{}"
@@ -82,4 +64,22 @@
             <x-dynamic-component :component="$icon" :class="$iconClasses"/>
         @endif
     </button>
+@elseif ($tag === 'a')
+    <a
+        @if ($tooltip)
+            x-data="{}"
+            x-tooltip.raw="{{ $tooltip }}"
+        @endif
+        {{ $attributes->class($buttonClasses) }}
+    >
+        @if ($icon && $iconPosition === 'before')
+            <x-dynamic-component :component="$icon" :class="$iconClasses"/>
+        @endif
+
+        {{ $slot }}
+
+        @if ($icon && $iconPosition === 'after')
+            <x-dynamic-component :component="$icon" :class="$iconClasses"/>
+        @endif
+    </a>
 @endif
