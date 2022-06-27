@@ -11,8 +11,11 @@
         <input type="hidden" name="_method" :value="data.method">
 
         <div>
-            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-gray-600">
-                <x-heroicon-s-question-mark-circle class="h-6 w-6 text-primary-600"/>
+            <div @class([
+                'mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-gray-200',
+                'dark:bg-gray-600' => $darkMode
+            ])>
+                <x-heroicon-o-exclamation-circle class="h-16 w-16 text-gray-400"/>
             </div>
 
             <div class="mt-3 text-center sm:mt-5">
